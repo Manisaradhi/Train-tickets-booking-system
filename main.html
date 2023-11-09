@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bharath Railway Ticket Booking System</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="main">
+            <h1 class="head">Bharath Railway Ticket Booking System</h1>
+            <div class="nav">
+                <ul>
+                    <li><a href="main.html" id="home">HOME</a></li>
+                    <li><a href="https://menurates.irctc.co.in/">FOOD</a></li>
+                    <li><a href="https://www.hotels.irctc.co.in/">HOTELS</a></li>
+                    <li><a href="https://www.irctc.co.in/nget/enquiry/alerts">ALERTS</a></li>
+                </ul>
+            </div>
+            <br>
+            <input class="bt" type="button" value="BOOK TICKETS" onclick="openForm()">
+            <br>
+            <div class="form-popup" id="myForm" >
+                <form action="bookingC.html" name="f1" style="margin-left: 20px;">
+                    <p class="add">Book Tickets</p>
+                    <label for="From"><b>From: </b></label>
+                    <input type="text" placeholder="From" name="from" required>
+                    <label for="date1"><b>Date:</b></label>
+                    <input type="date" id="d1" name="date1" required>
+                    <br>
+                    <label for="to"><b>To: </b></label>
+                    <input type="text" placeholder="To" name="to" required>
+                    <select name="All classes">
+                        <option value="All Classes">All Classes</option>
+                        <option value="1A">AC First Class (1A)</option>
+                        <option value="EV">Vistadome AC (EV)</option>
+                        <option value="EC">Exec. Chair Car (EC)</option>
+                        <option value="2A">AC 2 Tier (2A)</option>
+                        <option value="FC">First Class (FC)</option>
+                        <option value="3A">AC 3 Tier (3A)</option>
+                        <option value="3E">AC 3 Economy (3E)</option>
+                        <option value="VC">Vistadome Chair Car (VC)</option>
+                        <option value="CC">AC Chair car (CC)</option>
+                        <option value="SL">Sleeper (SL)</option>
+                        <option value="VS">Vistadome Non AC (VS)</option>
+                        <option value="2S">Second Sitting (2S)</option>
+                    </select>
+                    <select name="Quota">
+                        <option value="GENERAL">GENERAL</option>
+                        <option value="LADIES">LADIES</option>
+                        <option value="LOWER BERTH/SR.CITIZEN">LOWER BERTH/SR.CITIZEN</option>
+                        <option value="PERSON WITH DISABILITY">PERSON WITH DISABILITY</option>
+                        <option value="DUTY PASS">DUTY PASS</option>
+                        <option value="TATKAL">TATKAL</option>
+                        <option value="PREMIUM TATKAL">PREMIUM TATKAL</option>
+                    </select>
+                    <br>
+                    <input type="checkbox" name="disability" value="Person with disability concession" onclick="al()">
+                    <label for="disability" style="font-size: 15px;">Person with disability concession</label>
+                    <input type="checkbox" name="fdate" value="Flexible with date">
+                    <label for="date_confirm" style="font-size: 15px;">Flexible with date</label><br>
+                    <input type="button" value="Search" onclick="openForm1()"><br>
+                    <div class="form-popup1" id="myForm1">
+                        <center><p style="font: bold; text-transform: uppercase;" id="p1"></p>
+                        <form>
+                            <table cellspacing="10px" border="1" cellpadding="10px">
+                                <tr>
+                                    <td style="border: none;background: lightgrey;" colspan="3">VANDE BHARAT EXP (20833) |<b>| Runs On: M T W T F S </b> S | SECUNDERABAD JN </td>
+                                </tr>
+                                <tr>
+                                    <td>AC Chair Car(CC)</td><td>Exex. Chair Car(EC)</td>
+                                </tr>
+                                <tr>
+                                    <td  style="border: none;" colspan="2" align="center"><input type="button" value="Book Now" class="bt2" onclick="booking()"></td>
+                                </tr>
+                            </table>
+                            <table cellspacing="10px" border="1" cellpadding="10px">
+                                <tr>
+                                    <td style="border: none;background: lightgrey;" colspan="3">NS NSL SF EXP (12787) |<b>| Runs On: M T W T </b>F <b>S</b> S | SECUNDERABAD JN </td>
+                                </tr>
+                                <tr>
+                                    <td>AC Chair Car(CC)</td><td>Exex. Chair Car(EC)</td>
+                                </tr>
+                                <tr>
+                                    <td  style="border: none;" colspan="2" align="center"><input type="button" value="Book Now" class="bt2" onclick="booking()"></td>
+                                </tr>
+                            </table></center>
+                            <div class="form-popup2" id="myForm2">
+                                <form class="fd" name="t1" align="left">
+                                    <table class="tab">
+                                        <tr>
+                                            <td colspan="2" align="center"><h1>Ticket Booking</h1></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="fname">Name:</label></td>
+                                            <td><input type="text" name="fname" placeholder="First Name" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="age">Age:</label></td>
+                                            <td><input type="number" name="age" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="mail">Mail:</label></td>
+                                            <td><input type="email" placeholder="abc@gmail.com" name="mail" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="no">Mobile:</label></td>
+                                            <td><input type="tel" name="no" placeholder="XXXXXXXXXX" maxlength="10" size="10" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Gender:</td>
+                                            <td>
+                                                <input type="radio" name="gender" value="Male" required>
+                                                <label for="male">Male</label>
+                                                <input type="radio" name="gender" value="Female" required>
+                                                <label for="female">Female</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Berth Preference:</td>
+                                            <td>
+                                                <select name="Berth" required>
+                                                    <option value="No preference">No preference</option>
+                                                    <option value="Lower">Lower</option>
+                                                    <option value="Middle">Middle</option>
+                                                    <option value="Upper">Upper</option>
+                                                    <option value="Side Lower">Side Lower</option>
+                                                    <option value="Side Upper">Side Upper</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Nationality:</td>
+                                            <td><input type="text" name="nationality"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" align="center">
+                                                <button type="submit" class="sub">Book Ticket</button>
+                                                <button type="button" class="ccl" onclick="closeForm()">Close</button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                            <center><input type="button" value="Close" onclick="closeForm1()"></center>
+                        </form>
+                    </div>
+                    <p style="font-size: 10px;">Users are advised to download Official ‘IRCTC Rail Connect’ Apps only from Google Play Store or Apple App Store. Please do not use unauthorized links/URLs.
+                        Please check the alert section regarding restoration of AC 3-tier economy fare.
+                        IRCTC Tejas Express Train 82501/82502 is cancelled for journey date 12.11.2023 (Sunday) on the occassion of Diwali. Train will run on journey date 14.11.2023 (Tuesday).</p>
+                    <center><input type="button" value="Close" onclick="closeForm()"></center>
+                </form>
+            </div>
+        </div>
+    <script src="script.js"></script>
+    </body>
+</html>
